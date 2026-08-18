@@ -1,0 +1,3 @@
+# Contributing Guidelines
+
+The project will use a branching strategy that separates stable code from ongoing development. New features and changes will be developed in separate branches before being merged into the main branch. Branch names will clearly describe the purpose of the change, such as feature or bug-fix branches. Changes should be reviewed and tested before they are merged into the main branch.

@@ -14,3 +14,9 @@ The purpose of this project is to apply Software Quality Engineering practices a
 - tests/ - Test cases and automated tests
 - docs/ - Project documentation
 - screenshots/ - Evidence of testing and project activities
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/pirhamahar/sqe-library-management.git
