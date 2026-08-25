@@ -11,7 +11,7 @@ The five reported defects were reviewed based on severity, priority, user impact
 * Severity: High
 * Priority: High
 * Decision: Fix this sprint
-* Reason: Duplicate roll numbers can create incorrect student records and cause confusion when identifying students. This affects data integrity and should be addressed immediately.
+* Reason: Duplicate roll numbers can create incorrect student records and affect data integrity. This issue should be addressed immediately.
 
 ### 2. Already issued book can be issued again
 
@@ -25,14 +25,14 @@ The five reported defects were reviewed based on severity, priority, user impact
 * Severity: High
 * Priority: High
 * Decision: Fix this sprint
-* Reason: Incorrect availability information can cause users to see wrong book status and can contribute to incorrect issue and return operations.
-
+* Reason: This high-severity and high-priority issue affects the accuracy of book availability information and should be addressed during the sprint.
+  
 ### 4. Non-existent book can be returned
 
 * Severity: Medium
 * Priority: High
-* Decision: Fix this sprint
-* Reason: Although the severity is medium, the priority is high because the defect affects the reliability of return operations and should be corrected to prevent invalid transactions.
+* Decision: Do not fix this sprint
+* Reason: The issue has high priority because it affects return operations, but its medium severity makes it possible to defer it when sprint capacity is limited. It will be scheduled for a future sprint.
 
 ### 5. Invalid or negative book ID is accepted
 
@@ -45,17 +45,26 @@ The five reported defects were reviewed based on severity, priority, user impact
 
 ### Trade-off 1: Non-existent book return
 
-This issue has medium severity but high priority. Its severity is medium because it does not directly cause the same level of damage as a major data-integrity failure. However, its priority is high because return operations are an important part of the library workflow and invalid transactions should be prevented.
+This issue has medium severity but high priority. Its severity is medium because it does not directly cause the same level of damage as a major data-integrity failure. However, its priority is high because return operations are an important part of the library workflow and invalid transactions should be prevented. Due to limited sprint capacity, the team will defer this issue.
 
 ### Trade-off 2: Invalid or negative book ID
 
-This issue has medium severity and medium priority. The defect should eventually be fixed because invalid input can create unreliable records. However, higher-severity and higher-priority issues affecting book issuing, availability, and student data should be handled first. Therefore, this issue is deferred to a future sprint.
+This issue has medium severity and medium priority. The defect should eventually be fixed because invalid input can create unreliable records. However, higher-impact defects affecting core library operations should be handled first. Therefore, this issue is deferred to a future sprint.
 
 ## Sprint Decision
 
-The sprint will focus on defects that have the greatest impact on core library operations and data integrity. The two issues selected as not being fixed in this sprint are:
+The sprint will focus on defects with the greatest immediate impact on core library operations and data integrity.
 
-1. Non-existent book return
-2. Invalid or negative book ID
+The two issues selected as not being fixed in this sprint are:
 
-These issues are deferred because the sprint has limited capacity and the team will prioritize the highest-impact defects first.
+1. Non-existent book can be returned
+2. Invalid or negative book ID is accepted
+
+
+
+However, only two issues are marked with the `status:wontfix` label as required by the task:
+
+* Non-existent book can be returned
+* Invalid or negative book ID is accepted
+
+The book availability issue remains a high-severity and high-priority issue and should be addressed in the next sprint.
