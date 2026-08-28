@@ -5,7 +5,7 @@ using namespace std;
 class Book {
 public:
     int bookId;
-    bool issued;
+    bool issued; 
 
     Book(int id) {
         bookId = id;
