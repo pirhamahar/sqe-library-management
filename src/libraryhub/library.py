@@ -10,3 +10,15 @@ class Library:
 
         current_books.append(isbn)
         self.loans[member_id] = current_books
+
+def validate_isbn(isbn):
+    if not isinstance(isbn, str):
+        raise ValueError("ISBN must be a string")
+
+    if len(isbn) != 13:
+        raise ValueError("ISBN must contain exactly 13 digits")
+
+    if not isbn.isdigit():
+        raise ValueError("ISBN must contain only numeric digits")
+
+    return True
