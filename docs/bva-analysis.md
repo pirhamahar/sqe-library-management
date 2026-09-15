@@ -54,3 +54,11 @@ Test results:
 **Total: 33 passed in 0.08s**
 
 All implemented EP and BVA test cases passed successfully.
+
+## 5. Defect Verification
+
+Boundary Value Analysis detected an intentional off-by-one defect at the boundary value 30. The defect caused `fine_tier(30)` to return `Severe` instead of the expected `High`.
+
+After correcting the boundary condition, the complete test suite was executed again.
+
+**Final result: 33 passed**
