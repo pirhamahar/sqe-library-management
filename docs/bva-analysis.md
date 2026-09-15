@@ -38,3 +38,19 @@ The `validate_isbn()` function requires exactly 13 numeric digits.
 ## 4. Boundary Value Analysis Limitation
 
 Boundary Value Analysis focuses on values at and immediately around the boundaries. It is effective for detecting off-by-one errors, but it does not test every possible value in an input domain. Equivalence Partitioning and Boundary Value Analysis should therefore be combined for efficient test coverage.
+
+
+## 4. Pytest Execution Summary
+
+The complete pytest suite was executed after implementing the Boundary Value Analysis tests.
+
+Test results:
+
+- `tests/test_borrow_limit.py` — 4 passed
+- `tests/test_fine_tier.py` — 6 passed
+- `tests/test_fine_tier_bva.py` — 13 passed
+- `tests/test_validate_isbn.py` — 10 passed
+
+**Total: 33 passed in 0.08s**
+
+All implemented EP and BVA test cases passed successfully.
