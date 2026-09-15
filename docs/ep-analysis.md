@@ -39,3 +39,17 @@ Business Rule: Overdue days are mapped to fine tiers.
 ## Limitation of Equivalence Partitioning
 
 Equivalence Partitioning reduces the number of test cases by selecting representative values from each equivalence class. However, EP can miss defects at the exact boundaries between classes, such as 7/8 or 14/15. Boundary Value Analysis can be used to test these boundary conditions.
+
+## 4. Pytest Execution Summary
+
+The complete pytest suite was executed after implementing the equivalence partitioning tests.
+
+Test results:
+
+- `tests/test_borrow_limit.py` — 2 passed
+- `tests/test_fine_tier.py` — 6 passed
+- `tests/test_validate_isbn.py` — 5 passed
+
+**Total: 13 passed in 0.05s**
+
+All implemented equivalence partitioning test cases passed successfully.
