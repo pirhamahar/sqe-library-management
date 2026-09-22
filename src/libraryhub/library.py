@@ -13,6 +13,11 @@ def fine_tier(days_overdue):
         return "Severe"
 
 
+class LibraryIOError(Exception):
+    """Custom exception for library file I/O errors."""
+    pass
+
+
 class Library:
     def __init__(self):
         self.loans = {}
@@ -32,6 +37,20 @@ class Library:
 
         current_books.append(isbn)
         self.loans[member_id] = current_books
+
+    def export_catalog(self, path):
+        content = ""
+
+        for isbn, total_copies in self.catalog.items():
+            content += f"{isbn},{total_copies}\n"
+
+        try:
+            with open(path, "w") as file:
+                file.write(content)
+        except OSError as error:
+            raise LibraryIOError(
+                f"Unable to export catalog: {path}"
+            ) from error
 
 
 def validate_isbn(isbn):
