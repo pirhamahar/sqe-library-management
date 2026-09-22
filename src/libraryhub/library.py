@@ -12,9 +12,17 @@ def fine_tier(days_overdue):
     else:
         return "Severe"
 
+
 class Library:
     def __init__(self):
         self.loans = {}
+        self.catalog = {}
+
+    def add_book(self, isbn, total_copies):
+        self.catalog[isbn] = total_copies
+
+    def total_available_copies(self):
+        return sum(self.catalog.values())
 
     def borrow_book(self, member_id, isbn):
         current_books = self.loans.get(member_id, [])
@@ -24,6 +32,7 @@ class Library:
 
         current_books.append(isbn)
         self.loans[member_id] = current_books
+
 
 def validate_isbn(isbn):
     if not isinstance(isbn, str):
