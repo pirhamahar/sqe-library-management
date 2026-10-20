@@ -17,7 +17,7 @@ def expensive_library():
     return Library()
 
 
-@pytest.mark.parametrize("current_books", [3])
+@pytest.mark.parametrize("current_books", [0, 3, 4])
 def test_borrow_book_valid_class(library, current_books):
     for i in range(current_books):
         library.borrow_book("M001", f"ISBN{i}")
