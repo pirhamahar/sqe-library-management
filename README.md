@@ -18,5 +18,23 @@ The purpose of this project is to apply Software Quality Engineering practices a
 ## Installation
 
 1. Clone the repository:
-   ```bash
+
+   
    git clone https://github.com/pirhamahar/sqe-library-management.git
+
+
+2. Navigate to the project directory:
+
+   cd sqe-library-management
+
+
+3. Install the required testing dependencies:
+
+   
+   pip install pytest pytest-mock
+   
+
+4. Run the tests:
+
+   
+   pytest
