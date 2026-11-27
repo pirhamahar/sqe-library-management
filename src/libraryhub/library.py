@@ -65,9 +65,25 @@ def validate_isbn(isbn):
 
     return True
 
+
 def borrow_percentile(member, library):
+    """
+    Return the percentile rank of a member based on loan records.
+
+    Raises ValueError if the library has no members or the member
+    does not exist. A single-member library returns 100.0.
+    """
     members = list(library.loans.keys())
-    total_members = len(members)
+
+    if not members:
+        raise ValueError("Cannot calculate percentile for an empty library")
+
+    if member not in members:
+        raise ValueError("Member does not exist in the library")
+
+    if len(members) == 1:
+        return 100.0
+
     rank_index = members.index(member)
 
-    return (rank_index + 1) / total_members * 100
+    return rank_index / (len(members) - 1) * 100.0
