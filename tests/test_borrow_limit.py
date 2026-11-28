@@ -24,6 +24,9 @@ def test_borrow_book_valid_class(library, current_books):
 
     library.borrow_book("M001", "ISBN_NEW")
 
+    assert len(library.loans["M001"]) == current_books + 1
+    assert library.loans["M001"][-1] == "ISBN_NEW"
+
 
 def test_borrow_book_invalid_class(library):
     for i in range(5):
