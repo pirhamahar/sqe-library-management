@@ -30,3 +30,16 @@
 - Is the function documented with a clear docstring?
 - Are assumptions and expected inputs explained?
 - Is the function's return value clearly described?
+
+
+## 7. Lessons Learned
+
+### Most Valuable Checklist Item
+- Are meaningful tests provided for the new or changed functionality?
+
+This checklist item helped identify issues in the borrow_percentile function. Testing helped verify the percentile calculation, empty library handling, unknown members, and single-member library scenarios.
+
+### Additional Checklist Item for Next Time
+- Are boundary conditions and unusual input scenarios tested before approving a pull request?
+
+This will help reviewers identify edge-case bugs before merging code.

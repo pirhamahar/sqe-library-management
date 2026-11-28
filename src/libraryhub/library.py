@@ -1,3 +1,4 @@
+
 def fine_tier(days_overdue):
     if days_overdue < 0:
         raise ValueError("Days overdue cannot be negative")
@@ -68,10 +69,14 @@ def validate_isbn(isbn):
 
 def borrow_percentile(member, library):
     """
-    Return the percentile rank of a member based on loan records.
+    Calculate the percentile rank of a member based on loan records.
 
-    Raises ValueError if the library has no members or the member
-    does not exist. A single-member library returns 100.0.
+    Raises:
+        ValueError: If the library is empty or the member does not exist.
+
+    Returns:
+        float: A percentile rank between 0.0 and 100.0.
+               A single-member library returns 100.0.
     """
     members = list(library.loans.keys())
 
